@@ -33,6 +33,8 @@ class UserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        return redirect()->route('users.index')
+                         ->with('success', 'Usuário cadastrado com sucesso!');
         return redirect()->route('fotos.index')->with('success', 'Usuário cadastrado com sucesso!');
     }
 }
